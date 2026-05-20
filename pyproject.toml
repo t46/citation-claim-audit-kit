@@ -1,0 +1,8 @@
+[project]
+name = "citation-claim-audit-kit"
+version = "0.1.0"
+description = "Lightweight metascience experiment: LLM-as-judge audit of whether paper citations actually support the claims they're attached to."
+requires-python = ">=3.13"
+dependencies = [
+    "anthropic>=0.103.1",
+]

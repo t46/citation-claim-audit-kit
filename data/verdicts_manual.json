@@ -1,0 +1,142 @@
+[
+  {
+    "pair_id": "p1-01",
+    "citation_exists": true,
+    "support_verdict": "supports",
+    "rationale": "The Gemini 2.5 technical report (arXiv:2507.06261) is the canonical primary source for the Gemini 2.5-Pro model and explicitly describes its sparse MoE architecture. Using it as evidence that Gemini-2.5-Pro is a MoE LLM is a direct, on-point citation.",
+    "evidence_excerpt": "Gemini 2.5 technical report documents a sparse mixture-of-experts decoder backbone for the Pro tier."
+  },
+  {
+    "pair_id": "p1-02",
+    "citation_exists": true,
+    "support_verdict": "supports",
+    "rationale": "Eliseev & Mazur 2023 (arXiv:2312.17238) is exactly the foundational paper on fast MoE inference via expert offloading to host memory under GPU-memory constraints. The cited work directly substantiates the claim that offloading is the mechanism used when experts outgrow GPU memory.",
+    "evidence_excerpt": "Eliseev & Mazur: 'Fast inference of mixture-of-experts language models with offloading' -- weights are offloaded to host memory and prefetched per token."
+  },
+  {
+    "pair_id": "p1-03",
+    "citation_exists": true,
+    "support_verdict": "supports",
+    "rationale": "Clark et al. 2022 'Unified scaling laws for routed language models' is exactly a paper deriving capability gains from scaling expert count in routed (MoE) LMs. Direct support.",
+    "evidence_excerpt": "Clark et al. derive scaling laws showing that increasing the number of experts (routed parameters) yields capability gains at fixed compute, validating the cited claim."
+  },
+  {
+    "pair_id": "p1-04",
+    "citation_exists": true,
+    "support_verdict": "supports",
+    "rationale": "Sutton, Precup & Singh (1999) is THE canonical reference for the options framework / temporally extended actions in semi-MDPs. The claim cites it exactly for what the paper introduced.",
+    "evidence_excerpt": "Sutton, Precup, Singh (1999), 'Between MDPs and semi-MDPs', formalizes options as temporally extended actions that persist over multiple time steps."
+  },
+  {
+    "pair_id": "p1-05",
+    "citation_exists": true,
+    "support_verdict": "supports",
+    "rationale": "Harb, Bacon, Klissarov & Precup 2017 'When waiting is not an option: learning options with a deliberation cost' is explicitly about adding deliberation costs to option switching. The claim is an exact restatement of the paper's contribution.",
+    "evidence_excerpt": "Harb et al. introduce a deliberation cost term penalizing option termination/switching in the option-critic objective."
+  },
+  {
+    "pair_id": "p1-06",
+    "citation_exists": true,
+    "support_verdict": "supports",
+    "rationale": "Bacon, Harb & Precup 2016 (arXiv:1609.05140) is the original option-critic paper. Citing it as the source of the option-critic architecture is direct support.",
+    "evidence_excerpt": "Bacon, Harb, Precup derive policy-gradient theorems for options and propose the option-critic architecture."
+  },
+  {
+    "pair_id": "p1-07",
+    "citation_exists": true,
+    "support_verdict": "partial",
+    "rationale": "The Nemotron-Post-Training-Dataset-v2 is a real NVIDIA-released dataset on Hugging Face, so the citation exists in artefact form. However, the reference list entry has NO author, NO year, and only a 'Link' field, which means the citation is bibliographically incomplete and not independently verifiable by the standard citation hygiene tests a reviewer would apply. The dataset itself does support the claim of providing 10 categories of prompts.",
+    "evidence_excerpt": "Nemotron-Post-Training-Dataset-v2 on Hugging Face contains multi-domain SFT/RL prompts grouped into category subsets; the artefact exists, but the bibliographic record in the paper is stub-like."
+  },
+  {
+    "pair_id": "p1-08",
+    "citation_exists": true,
+    "support_verdict": "supports",
+    "rationale": "Xue et al. 2024/2025 'MoE-Infinity' (arXiv:2401.14361) is exactly the paper that designs an offloading-aware MoE serving system with sparsity-aware expert caching driven by activation history. The body text's characterization is accurate.",
+    "evidence_excerpt": "MoE-Infinity uses past activation traces to maintain a sparsity-aware expert cache and prefetch policy for memory-constrained MoE inference."
+  },
+  {
+    "pair_id": "p1-09",
+    "citation_exists": true,
+    "support_verdict": "supports",
+    "rationale": "Chai et al. 2024 'MA-RLHF' (arXiv:2410.02743) does exactly what the body text claims: introduces macro-actions over token sequences into RLHF. Direct support.",
+    "evidence_excerpt": "MA-RLHF treats contiguous spans of tokens as macro-actions and applies RLHF over the macro-action policy rather than per-token."
+  },
+  {
+    "pair_id": "p1-10",
+    "citation_exists": true,
+    "support_verdict": "partial",
+    "rationale": "SEER-MoE (Muzio, Sun, He 2024) does address MoE efficiency by reducing the effective number of active experts via regularization toward sparsity, which is *related to* expert pruning but not literally 'permanently removing or merging experts'. The body text's framing as straightforward prune-then-finetune slightly mischaracterizes SEER-MoE's mechanism (regularization-driven sparsity) -- partial support at best.",
+    "evidence_excerpt": "SEER-MoE applies a heavy-hitter-counting heuristic + regularization to push routing toward fewer experts; it does not strictly 'remove' experts the way [24] and [39] do."
+  },
+  {
+    "pair_id": "p2-01",
+    "citation_exists": true,
+    "support_verdict": "weak",
+    "rationale": "The claim is about the *monolithic-deployment paradigm* of LLMs; Olmo 3 is itself just a recent monolithic LLM release. Olmo 3 is therefore at best a tangential illustration -- the citation is to an instance, not to evidence that the paradigm exists or has the listed drawbacks. The citation is meant illustratively (a list of three model releases [1,2,3]) but in isolation [1] does not establish anything about the paradigm itself.",
+    "evidence_excerpt": "Olmo 3 is a model release artefact (weights + tech report); it is an example of monolithic deployment rather than a study of monolithic deployment."
+  },
+  {
+    "pair_id": "p2-02",
+    "citation_exists": true,
+    "support_verdict": "supports",
+    "rationale": "The DeepSeek-V3 technical report explicitly documents 256 routed experts per MoE layer with 8 active per token, totaling 671B parameters with 37B active. The claim is directly substantiated by the cited work.",
+    "evidence_excerpt": "DeepSeek-V3 reports 256 routed + 1 shared expert per layer, 8 active per token, 671B total / 37B active parameters."
+  },
+  {
+    "pair_id": "p2-03",
+    "citation_exists": true,
+    "support_verdict": "weak",
+    "rationale": "Li et al. 'Can mixture-of-experts surpass dense LLMs under strictly equal resources?' (ICLR 2026) is about the dense-vs-MoE comparison at fixed compute/parameter budget, NOT specifically about 'memory-constrained scaling laws'. The cited work's framing centers on equal-resource comparison, not memory as the binding constraint. Naming it 'memory-constrained scaling laws' overstates and slightly mischaracterizes the cited contribution.",
+    "evidence_excerpt": "Li et al. study under-what-conditions MoE matches dense LLMs at equal training compute/parameters; the work is a fair-compute comparison study, not a memory-axis scaling-law paper."
+  },
+  {
+    "pair_id": "p2-04",
+    "citation_exists": true,
+    "support_verdict": "partial",
+    "rationale": "The Mixtral paper (Jiang et al. 2024) does include an expert-specialization analysis and reports that observed specialization correlates more with surface/positional patterns than with semantic domains. So it partly supports the claim. However, the more famous and specific finding about token-ID-driven specialization is from other follow-up analyses; Mixtral itself reports the negative finding more in passing than as a central result. Partial support is the most honest verdict.",
+    "evidence_excerpt": "Mixtral's appendix routing analysis shows little evidence of high-level domain specialization and notes correlations with token-ID-like surface patterns."
+  },
+  {
+    "pair_id": "p2-05",
+    "citation_exists": true,
+    "support_verdict": "supports",
+    "rationale": "Wang, Hayou & Nalisnick 'The myth of expert specialization in MoEs: why routing reflects geometry, not necessarily domain expertise' (arXiv:2604.09780) makes exactly the claim that apparent specialization reflects representation-space geometry. The cited work is a near-verbatim source for the claim.",
+    "evidence_excerpt": "Wang, Hayou, Nalisnick argue that MoE routing decisions follow geometric structure of token embeddings rather than encoding interpretable domain-level expertise."
+  },
+  {
+    "pair_id": "p2-06",
+    "citation_exists": true,
+    "support_verdict": "supports",
+    "rationale": "Qiu et al. 'Demons in the detail: on implementing load balancing loss for training specialized MoE models' (ACL 2025) is exactly about correct load-balancing implementations -- in particular, the global vs. local (data-parallel) aggregation question that the EMO paper invokes here. The citation maps to the cited work's central finding.",
+    "evidence_excerpt": "Qiu et al. analyze how load-balance loss aggregation across data-parallel groups affects expert specialization and training stability, advocating global aggregation."
+  },
+  {
+    "pair_id": "p2-07",
+    "citation_exists": true,
+    "support_verdict": "supports",
+    "rationale": "Muennighoff et al. OLMoE (ICLR 2025) documents the pretraining corpus used to train OLMoE. EMO using 'the OLMoE pretraining corpus' is correctly attributed.",
+    "evidence_excerpt": "OLMoE technical report describes its 5T-token pretraining corpus composition (DCLM, Dolma, etc.)."
+  },
+  {
+    "pair_id": "p2-08",
+    "citation_exists": true,
+    "support_verdict": "supports",
+    "rationale": "Branch-Train-MiX (Sukhbaatar et al. 2024) is the canonical 'partition data into domains, train experts separately, merge into one MoE' method. Direct support for the claim.",
+    "evidence_excerpt": "BTX trains separate dense experts on domain-specific data (math, code, etc.) then merges them with router-style mixing into a single MoE."
+  },
+  {
+    "pair_id": "p2-09",
+    "citation_exists": true,
+    "support_verdict": "supports",
+    "rationale": "ModuleFormer (Shen et al. 2023) is explicitly about training modular MoE expert subsets that can be used standalone via a mutual-information objective. Direct support for the characterization as 'closest line of work'.",
+    "evidence_excerpt": "ModuleFormer trains experts with a mutual-information objective so subsets remain functional in isolation, identical in spirit to EMO's modularity goal."
+  },
+  {
+    "pair_id": "p2-10",
+    "citation_exists": true,
+    "support_verdict": "weak",
+    "rationale": "The claim concerns the specific architectural choice that 'decoder-only Transformer language models replace the feedforward sublayer with a sparse MoE'. Vaswani et al. 2017 'Attention is all you need' introduced the encoder-decoder Transformer but (a) did not introduce decoder-only LMs and (b) did not introduce MoE. The closest correct primary citations would be Radford et al. (GPT, for decoder-only) and Shazeer et al. 2017 (for FFN-replacement-by-MoE, which is reference [11] in this paper). Citing Vaswani for an MoE-replaces-FFN-in-decoder-only-Transformer claim is a weak/illustrative citation rather than direct support.",
+    "evidence_excerpt": "Vaswani et al. 2017 introduce the Transformer encoder-decoder with attention + dense feedforward; the paper neither defines decoder-only LMs nor introduces mixture-of-experts."
+  }
+]
